@@ -33,6 +33,9 @@ def main():
         }
     }
 
+    if '{DB_ENGINE}' == 'postgresql_psycopg2':
+        global_settings.DATABASES['default']['HOST'] = 'localhost'
+
     global_settings.STATIC_URL = "/static/"
     global_settings.MEDIA_ROOT = os.path.join(BASE_PATH, 'static')
     global_settings.STATIC_ROOT = global_settings.MEDIA_ROOT
