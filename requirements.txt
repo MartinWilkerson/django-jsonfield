@@ -1,4 +1,4 @@
 tox
-tox-bitbucket-status
+# tox-bitbucket-status
 coverage
 detox
