@@ -33,7 +33,7 @@ def main():
         }
     }
 
-    if '{DB_ENGINE}' == 'postgresql_psycopg2' or '{DB_ENGINE}' == 'mysql':
+    if '{DB_ENGINE}'.format(**os.environ) == 'postgresql_psycopg2' or '{DB_ENGINE}'.format(**os.environ) == 'mysql':
         global_settings.DATABASES['default']['HOST'] = 'localhost'
 
     global_settings.STATIC_URL = "/static/"
