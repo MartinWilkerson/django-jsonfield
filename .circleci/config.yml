@@ -9,6 +9,9 @@ jobs:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
       - image: n42org/tox:3.4.0
+        environment:
+          MYSQL_USER: root
+          MYSQL_PASSWORD: password
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -17,6 +20,10 @@ jobs:
         environment:
           POSTGRES_USER: root
           POSTGRES_PASSWORD: password
+
+      - image: circleci/mariadb
+        environment:
+          MYSQL_ROOT_PASSWORD: password
 
     working_directory: ~/repo
 
